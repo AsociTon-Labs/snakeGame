@@ -6,8 +6,6 @@
 #define width 70
 #define height 70
 
-using namespace std;
-
 //The global map
 
 char ma[width][height];
@@ -38,7 +36,7 @@ void append(char a='o',int r=2,int c=2)
 	temp->rindex = r;
 	temp->cindex = c;
 	temp->next = NULL;
-	//cout<<"Location recievded in node:"<<&(*b);
+	//std::cout<<"Location recievded in node:"<<&(*b);
 	if(root==NULL)
 	{
 		//snake's head is being created;
@@ -64,7 +62,7 @@ void doChange(int r,int c)
 	struct node* ptr;
 	int tempr,tempc;
 	//a for holding the new location of the head while b is a temporary variable
-	//cout<<"In change";
+	//std::cout<<"In change";
 	tempr = root->rindex;
 	tempc = root->cindex; //point to address stored at root->idexes
 	root->rindex = r;
@@ -87,14 +85,14 @@ void doChange(int r,int c)
 	 ma[r][c]=' ';
 	 else
 	 ma[tempr][tempc]=' ';
-	 //cout<<"Did change";
+	 //std::cout<<"Did change";
 }
 
 void applyChange()
 {
 	struct node*ptr;
 	ptr=root;
-	//cout<<"Applying change";
+	//std::cout<<"Applying change";
 	while(ptr!=NULL)
 	{
 		ma[ptr->rindex][ptr->cindex]=ptr->data;
@@ -130,12 +128,12 @@ void display()
 	{
 		for(int j=0;j<height;j++)
 		{
-			cout<<ma[i][j];
+			std::cout<<ma[i][j];
 		}
-	cout<<endl;
+	std::cout<<endl;
 	}
 	
-cout<<"___ SCORE____: "<<score;
+std::cout<<"___ SCORE____: "<<score;
 }
 
 //Getting the fruit in
@@ -187,8 +185,8 @@ checkDeath()
 	{
 		initialize=-1;
 		system("CLS");
-		cout<<"\n\n\n\t\t\t\t  ||GAME _ _ OVER ||";
-		cout<<"\n\n\n\t\t\t\t___SCORE:"<<score;
+		std::cout<<"\n\n\n\t\t\t\t  ||GAME _ _ OVER ||";
+		std::cout<<"\n\n\n\t\t\t\t___SCORE:"<<score;
 		getch();
 		exit(1);
 	}
@@ -204,8 +202,8 @@ checkDeath()
 		 {
 		 	initialize=-1;
 		   system("CLS");
-		   cout<<"\n\n\n\t\t\t\t  ||GAME _ _ OVER ||";
-		   cout<<"\n\n\n\t\t\t\t___SCORE:"<<score;
+		   std::cout<<"\n\n\n\t\t\t\t  ||GAME _ _ OVER ||";
+		   std::cout<<"\n\n\n\t\t\t\t___SCORE:"<<score;
 		   getch();
 		   exit(1);
 		  }
