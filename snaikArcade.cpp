@@ -62,7 +62,6 @@ void doChange(int r,int c)
 	struct node* ptr;
 	int tempr,tempc;
 	//a for holding the new location of the head while b is a temporary variable
-	//std::cout<<"In change";
 	tempr = root->rindex;
 	tempc = root->cindex; //point to address stored at root->idexes
 	root->rindex = r;
@@ -79,20 +78,19 @@ void doChange(int r,int c)
 		ptr=ptr->next;
 	 } 
 	 
-	 //to check
-	 //approach to void the location of the last node
+	 //approach to void that-is location of the last node
 	 if(root->next!=NULL)
 	 ma[r][c]=' ';
 	 else
 	 ma[tempr][tempc]=' ';
-	 //std::cout<<"Did change";
+	 //Replace the data stored at the index with  a white space"
 }
 
 void applyChange()
 {
 	struct node*ptr;
 	ptr=root;
-	//std::cout<<"Applying change";
+	//"Applying changes"
 	while(ptr!=NULL)
 	{
 		ma[ptr->rindex][ptr->cindex]=ptr->data;
